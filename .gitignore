@@ -1,0 +1,8 @@
+wp-config.php
+*~
+.project
+.settings
+.buildpath
+nbproject
+wp-config.php
+wp-content/uploads
