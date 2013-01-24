@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <title>Merovingio - Responsive Bootstrap Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css">
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/font-awesome.css">
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/theme.css">
-        <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Patua+One'>
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/fancybox/jquery.fancybox-1.3.4.css">
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/isotope.css">
+        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta name="viewport" content="width=device-width" />
+        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+        <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
         <!--[if lt IE 9]>
-                <link rel="stylesheet" href="css/font-awesome-ie7.css">
-                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
         <![endif]-->
-        <link rel="shortcut icon" href="favicon.ico">
+        <?php wp_head(); ?>
     </head>
 
     <body>
