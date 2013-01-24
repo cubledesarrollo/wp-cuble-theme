@@ -50,3 +50,11 @@ function fix_less_rel($src) {
     return $src;
 }
 add_filter('style_loader_tag', 'fix_less_rel');
+
+/*
+ * Esta clase permite meter la clase nav dentro del ul para que funcione con bootstrap.
+ */
+function add_menuclass($ulclass) {
+return preg_replace('/<ul>/', '<ul class="nav">', $ulclass, 1);
+}
+add_filter('wp_page_menu','add_menuclass');
