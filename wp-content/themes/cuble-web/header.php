@@ -46,8 +46,7 @@
                     <div class="navbar">
                         <div class="navbar-inner">
                             <div class="container">
-                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu</a>
-                                <a class="brand" href="index.html">Cuble</a>
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu</a> 
                                 <div class="nav-collapse collapse">                                 
                                      <?php  wp_nav_menu(); ?>
                                 </div> <!-- /.nav-collapse -->

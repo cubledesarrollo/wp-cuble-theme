@@ -1,8 +1,94 @@
+<?php
+/*
+  Template Name: myblog
+ */
+?>
 
-<?php get_header(); ?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Merovingio - Responsive Bootstrap Template</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Patua+One'>
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/font-awesome-ie7.css">
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="shortcut icon" href="favicon.ico">
+	</head>
+
+	<body>
+	<!-- page wrapper -->
+	<div class="container wrapper">
+		<header>
+			<div class="row">
+				<div class="span4">
+					<h1>
+						<a href="index.html"><img src="assets/logo.jpg" alt=""></a>
+					</h1>
+				</div>
+				<div class="span4">
+					<ul class="social-media">
+						<li><a href="#"><i class="icon icon-twitter-sign"></i></a></li>
+						<li><a href="#"><i class="icon icon-facebook-sign"></i></a></li>
+						<li><a href="#"><i class="icon icon-google-plus-sign"></i></a></li>
+						<li><a href="#"><i class="icon icon-pinterest-sign"></i></a></li>
+					</ul>
+				</div>
+				<div class="span4">
+					<form>
+						<div class="input-append">
+							<input class="span2" id="appendedInputButtons" type="text">
+							<button class="btn btn-primary" type="button">Search</button>
+						</div>
+					</form>
+				</div><!-- /.span -->
+			</div><!-- /.row -->
+		</header>
+
+		<!-- navbar -->
 		<div class="row">
 			<div class="span12">
-                            <h2><?php echo _e("Think Up!") ?></h2>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu</a>
+							<a class="brand" href="index.html">Merovingio</a>
+							<div class="nav-collapse collapse">
+								<ul class="nav">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About</a></li>
+									<li><a href="portfolio.html">Portfolio</a></li>
+									<li><a href="pricing.html">Pricing</a></li>
+									<li class="active"><a href="blog.html">Blog</a></li>
+									<li><a href="contact.html">Contact</a></li>
+									<li class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#">More <b class="caret"></b></a>
+										<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+											<li>
+												<a href="#">New Products and Catalogs</a>
+												<a href="#">Latests Offers and More</a>
+												<a href="#">All Products Discount</a>
+											</li>
+										</ul>
+									</li>
+								</ul> <!-- /.nav -->
+							</div> <!-- /.nav-collapse -->
+						</div><!-- /container -->
+					</div><!-- /navbar-inner -->
+				</div><!-- /navbar -->
+			</div><!-- /row -->
+		</div><!-- /span12 phew! -->
+
+		<div class="row">
+			<div class="span12">
+				<h2>Our Curated Blog</h2>
 				<hr>
 			</div>
 		</div>
@@ -11,7 +97,6 @@
 			<!-- blog container -->
 			<div class="span9">
 
-                            
 				<!-- first article -->
 				<article class="row">
 					<!-- post meta data -->
@@ -40,9 +125,65 @@
 						<a class="btn btn-primary" href="blog-post.html">Continue reading &raquo;</a>
 					</div><!-- /end of post -->
 				</article><!-- /end of article -->
-                                
-                                
-  
+
+				<!-- second article -->
+				<article class="row">
+					<!-- post meta data -->
+					<div class="span2 hidden-phone">
+						<!-- author meda data -->
+						<img class="img-rounded pull-left avatar" src="assets/user-2.jpg" alt="">
+						<strong>Written by:</strong>
+						<p>Calisto MT</p>
+						<span class="label"><small>Staff Editor</small></span>
+						<hr>
+						<!-- post meta data -->
+						<p>September 12, 2019</p>
+						<p>Post Tags:</p>
+						<ul class="post-tags">
+							<li>Social Media</li>
+							<li>Trending Tech</li>
+							<li>Branding</li>
+							<li>iOS Apps</li>
+						</ul>
+					</div><!-- end of post meta data-->
+					<!-- the post -->
+					<div class="span7">
+						<h3><a href="blog-post.html"><i class="icon icon-comments"></i> Freedom & Anti-Social: Helping You With GTD</a></h3>
+						<a href="blog-post.html"><img class="post-img" src="assets/post-img.jpeg" alt=""></a>
+						<p>Photographers and digital artists alike always try to keep their images organized neatly. If you’re a designer, this is typically vital to doing your job as well. There are a bunch of different ways to organize these files on your Mac, from Adobe’s Bridge (included with Photoshop and other software) to iPhoto, Apple’s default solution for OS X. I’ve never been a keen user of either of these because the former is too complex in areas and the latter can often dawdle here and there...</p>
+						<a class="btn btn-primary" href="blog-post.html">Continue reading &raquo;</a>
+					</div><!-- /end of post -->
+				</article><!-- /end of article -->
+
+				<!-- third article -->
+				<article class="row">
+					<!-- post meta data -->
+					<div class="span2 hidden-phone">
+						<!-- author meta data -->
+						<img class="img-rounded pull-left avatar" src="assets/user-3.jpg" alt="">
+						<strong>Written by:</strong>
+						<p>Georgia Serif</p>
+						<span class="label"><small>Staff Editor</small></span>
+						<hr>
+						<!-- post meta data -->
+						<p>September 12, 2019</p>
+						<p>Post Tags:</p>
+						<ul class="post-tags">
+							<li>Social Media</li>
+							<li>Trending Tech</li>
+							<li>Branding</li>
+							<li>iOS Apps</li>
+						</ul>
+					</div><!-- end of post meta data-->
+					<!-- the post -->
+					<div class="span7">
+						<h3><a href="blog-post.html"><i class="icon icon-picture"></i> SocialButterfly: Keep Your Social Networks in Check</a></h3>
+						<a href="blog-post.html"><img class="post-img" src="assets/post-img.jpeg" alt=""></a>
+						<p>Photographers and digital artists alike always try to keep their images organized neatly. If you’re a designer, this is typically vital to doing your job as well. There are a bunch of different ways to organize these files on your Mac, from Adobe’s Bridge (included with Photoshop and other software) to iPhoto, Apple’s default solution for OS X. I’ve never been a keen user of either of these because the former is too complex in areas and the latter can often dawdle here and there...</p>
+						<a class="btn btn-primary" href="blog-post.html">Continue reading &raquo;</a>
+					</div><!-- /end of post -->
+				</article><!-- /end of article -->
+
 			</div><!-- /.span9 blog container-->
 
 			<!-- the sidebar -->
