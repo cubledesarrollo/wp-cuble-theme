@@ -48,7 +48,7 @@
                             <div class="container">
                                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu</a> 
                                 <div class="nav-collapse collapse">                                 
-                                     <?php  wp_nav_menu(); ?>
+                                     <?php   wp_nav_menu(); ?>
                                 </div> <!-- /.nav-collapse -->
                             </div><!-- /container -->
                         </div><!-- /navbar-inner -->

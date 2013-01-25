@@ -3,8 +3,8 @@
  * Carga las hojas de estilo y los ficheros de scripts.
  */
 function cuble_scripts_styles() {
-    global $wp_styles;
     
+    global $wp_styles;    
     /**
      * Cargamos estilos.
      */
@@ -37,6 +37,7 @@ function cuble_scripts_styles() {
     wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri() .'/js/bootstrap.min.js', array('custom-jquery'), '2.2.2', true);
     
 }
+
 add_action( 'wp_enqueue_scripts', 'cuble_scripts_styles' );
 
 /**
