@@ -1,2 +1,2 @@
 all:
-    lessc -x --yui-compress less/cuble.less  > css/cuble.css
+	lessc -x --yui-compress less/cuble.less  > css/cuble.css
