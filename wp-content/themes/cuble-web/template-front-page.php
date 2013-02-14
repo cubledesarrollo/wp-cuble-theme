@@ -1,13 +1,13 @@
 <?php
-/*
-  Template Name: Home
+/**
+ * Template Name: Front Page
+ * 
+ * @author Cuble Desarrollo S.L.
+ * @package Wordpress Cuble Theme
  */
 ?>
 
 <?php get_header(); ?>
-
-
-
 <div class="row">
     <div class="span12">
         <div id="home-carousel" class="carousel slide">
@@ -80,8 +80,4 @@
 </div>
 
 </div><!-- /.container (page container)-->
-
-
-
-
-        <?php get_footer(); ?>
+<?php get_footer(); ?>

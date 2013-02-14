@@ -1,5 +1,51 @@
 <?php
 /**
+ * Registro de menús.
+ */
+register_nav_menu( 'primary-menu', __('Menú principal', 'cuble' ));
+register_nav_menu( 'footer-menu', __('Enlaces pie de página', 'cuble' ));
+
+/**
+ * Registro de tipos de entrada personales.
+ */
+
+register_post_type( 'projects',
+        array(
+                'labels' => array(
+                        'name' => __( 'Proyectos' , 'cuble'),
+                        'singular_name' => __( 'Proyecto' , 'cuble' )
+                        ),
+                'public' => true,
+                'show_ui' => true,
+                'has_archive' => true,
+                'rewrite' => array('slug' => 'projects'),
+                'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt')
+        )
+);
+
+register_taxonomy(
+        'project_tags',
+        'projects',
+        array(
+                'label' => __( 'Etiquetas de proyecto' ),
+                'rewrite' => array( 'slug' => 'project-tags' ),
+                'public' => true,
+                'show_ui' => true,
+                'show_admin_column' => true
+        )
+);
+
+/**
+ * Soporte imágenes destacadas
+ */
+if ( function_exists( 'add_theme_support' ) )
+{
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 670, 262, true );
+}
+add_image_size( 'projects-thumbnail', 252, 252, true );
+
+/**
  * Carga las hojas de estilo y los ficheros de scripts.
  */
 function cuble_scripts_styles() {
@@ -34,8 +80,16 @@ function cuble_scripts_styles() {
     
     /* Scripts */
     wp_enqueue_script('custom-jquery', get_stylesheet_directory_uri() .'/js/jquery-1.8.2.min.js', array(), '1.8.2', true);
-    wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri() .'/js/bootstrap.min.js', array('custom-jquery'), '2.2.2', true);
+
+    // Especifico para porfolio
+    if (is_post_type_archive('projects'))
+    {
+        wp_enqueue_script('fancybox', get_stylesheet_directory_uri() .'/fancybox/jquery.fancybox-1.3.4.pack.js', array('custom-jquery'), '1.3.4', true);
+        wp_enqueue_script('easing', get_stylesheet_directory_uri() .'/fancybox/jquery.easing-1.3.pack.js', array('custom-jquery', 'fancybox'), '1.3', true);
+        wp_enqueue_script('isotope', get_stylesheet_directory_uri() .'/js/jquery.isotope.min.js', array('custom-jquery'), '', true);
+    }
     
+    wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri() .'/js/bootstrap.min.js', array('custom-jquery'), '2.2.2', true);
 }
 
 add_action( 'wp_enqueue_scripts', 'cuble_scripts_styles' );
@@ -52,11 +106,124 @@ function fix_less_rel($src) {
 }
 add_filter('style_loader_tag', 'fix_less_rel');
 
-/*
- * Esta clase permite meter la clase nav dentro del ul para que funcione con bootstrap.
+/**
+ * Arreglar menú para usarse con el tema.
  */
-function add_menuclass($ulclass) {  
-    return preg_replace('/<ul id="menu-main-menu" class="menu">/', '<ul id="menu-main-menu" class="menu nav">', $ulclass, 1);
+function cuble_fix_page_menu($html)
+{
+    return preg_replace('/<ul>/', '<ul class="nav">', $html);
 }
+add_filter('wp_page_menu', 'cuble_fix_menu');
 
-add_filter('wp_nav_menu','add_menuclass');
+
+/**
+ * Avatares
+ */
+function cuble_avatar_css($class)
+{
+    $class = preg_replace("/class='avatar/", 
+            "class='img-rounded pull-left avatar", $class) ;
+    return $class;
+}
+add_filter('get_avatar','cuble_avatar_css');
+
+/**
+ * "Read More"
+ */
+function cuble_read_more_link( $link )
+{
+    
+    $link = preg_replace('/class="/', 'class="btn btn-primary ', $link );
+    return $link;
+}
+add_filter( 'the_content_more_link', 'cuble_read_more_link' );
+
+/**
+ * 
+ */
+function cuble_prev_link( $link )
+{
+    $link = preg_replace('/">/', '" class="btn pull-left">', $link );
+    return $link;
+}
+function cuble_next_link( $link )
+{
+    $link = preg_replace('/">/', '" class="btn pull-right">', $link );
+    return $link;
+}
+add_filter('next_post_link','cuble_next_link');
+add_filter('previous_post_link', 'cuble_prev_link');
+
+/**
+ * Tag cloud
+ */
+function cuble_tag_cloud($src)
+{
+    return preg_replace('/wp-tag-cloud/', 'wp-tag-cloud tag-cloud', $src);
+}
+add_filter('wp_tag_cloud','cuble_tag_cloud');
+
+/**
+ * 
+ */
+add_filter( 'nav_menu_css_class', 'additional_active_item_classes', 10, 2 );
+function additional_active_item_classes($classes = array(), $menu_item = false){
+
+    if(in_array('current-menu-item', $menu_item->classes)){
+        $classes[] = 'active';
+    }
+    return $classes;
+}
+/**
+ * Iconos de categoría.
+ */
+
+
+/**
+ * Sidebar Widgets 
+ */
+register_sidebar(array(
+        'name' => __( 'Barra Lateral', 'cuble' ),
+        'id' => 'right-sidebar',
+        'description' => __( 'Widgets para mostrar en la barra lateral derecha.' ),
+        'before_title' => '<strong>',
+        'after_title' => '</strong>',
+        'before_widget' => '<div class="well">',
+        'after_widget'  => '</div>',
+));
+
+/**
+ * Comentarios.
+ */
+function cuble_comment( $comment, $args, $depth ) {
+    $GLOBALS['comment'] = $comment;
+    ?><!-- single comment --><?php 
+    switch ( $comment->comment_type ) :
+    case 'pingback' :
+    case 'trackback' :
+        ?>
+	<li class="post pingback">
+		<p><?php _e( 'Pingback:', 'twentyeleven' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?></p>
+	<?php
+			break;
+		default :
+	?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment">
+		    <div class="media">
+		        <a class="pull-left" href="#">
+					<?php echo get_avatar( $comment, 70 ); ?>
+				</a>
+				<div class="media-body">
+			        <h5 class="media-heading"><?php comment_author_link(); ?></h5>
+		            <?php comment_text(); ?>
+			        <br>
+			        <a href="<?php esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_date(); ?></a> - <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Contestar', 'cuble' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+		        </div>
+	        </div>
+		</article><!-- #comment-## -->
+
+	<?php
+			break;
+	endswitch;
+}

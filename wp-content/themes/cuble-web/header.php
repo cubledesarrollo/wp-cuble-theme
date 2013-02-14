@@ -20,21 +20,21 @@
                 <div class="row">
                     <div class="span4">
                         <h1>
-                            <a href="index.html"><img src="<?php bloginfo('template_url'); ?>/assets/logocuble.png" alt=""></a>
+                            <a href="<?php echo site_url()?>"><img src="<?php bloginfo('template_url'); ?>/assets/logocuble.png" alt=""></a>
                         </h1>
                     </div>
                     <div class="span4">
                         <ul class="social-media">
                             <li><a href="http://www.twitter.com/cuble_es"><i class="icon icon-twitter-sign"></i></a></li>
                             <li><a href="http://www.facebook.com/cuble.es"><i class="icon icon-facebook-sign"></i></a></li>
-                            <li><a href="http://plus.google.com/cuble"><i class="icon icon-google-plus-sign"></i></a></li>                           
+                            <li><a href="https://plus.google.com/114449356144896554020/"><i class="icon icon-google-plus-sign"></i></a></li>
                         </ul>
                     </div>
                     <div class="span4">
                         <form>
                             <div class="input-append">
                                 <input class="span2" id="appendedInputButtons" type="text">
-                                <button class="btn btn-primary" type="button">Search</button>
+                                <button class="btn btn-primary" type="button"><?php _e("Buscar", 'cuble')?></button>
                             </div>
                         </form>
                     </div><!-- /.span -->
@@ -47,8 +47,10 @@
                         <div class="navbar-inner">
                             <div class="container">
                                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu</a> 
-                                <div class="nav-collapse collapse">                                 
-                                     <?php   wp_nav_menu(); ?>
+                                <a class="brand" href="<?php echo site_url()?>"><?php _e('Cuble', 'cuble') ?></a>
+                                <div class="nav-collapse collapse">
+                                   <?php wp_nav_menu(array('theme_location' => 'primary-menu', 
+                                                           'menu_class' => 'menu nav')); ?>
                                 </div> <!-- /.nav-collapse -->
                             </div><!-- /container -->
                         </div><!-- /navbar-inner -->
