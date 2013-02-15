@@ -11,7 +11,11 @@
 		<!-- post meta data -->
 		<p><?php the_date() ?></p>
 		<p><?php _e('Etiquetas')?>:</p>
+		<?php if (get_post_type() == 'projects'):?>
+		<?php echo get_the_term_list( $post->ID, 'project_tags', '<ul class="post-tags"><li>', '</li><li>' , '</li></ul>'); ?>
+		<?php else: ?>
 		<?php echo get_the_tag_list( '<ul class="post-tags"><li>', '</li><li>' , '</li></ul>'); ?>
+		<?php endif;?>
 	</div><!-- end of post meta data-->
 	<!-- the post -->
 	<div class="span7">
