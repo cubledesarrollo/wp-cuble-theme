@@ -1,7 +1,6 @@
 <!-- the sidebar -->
 <aside class="span3">
 
-    <?php if ( ! dynamic_sidebar( 'right-sidebar' ) ) : ?>
     <!-- widget -->
     <div class="well">
         <strong><?php _e("Buscar", 'cuble');?></strong>
@@ -20,6 +19,6 @@
                 'number' => 10,
                 'format' => 'list')); ?>
     </div>
-    <?php endif; ?>
-
+    <?php dynamic_sidebar( 'right-sidebar' ); ?>
+    
 </aside><!-- end of sidebar -->

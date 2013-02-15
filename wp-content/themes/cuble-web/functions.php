@@ -53,6 +53,20 @@ register_post_type( 'services',
 );
 
 /**
+ * Slideshow
+ */
+register_post_type( 'slide_image',
+        array(
+                'labels' => array(
+                        'name' => __( 'Imágenes Slideshow' , 'cuble'),
+                        'singular_name' => __( 'Imágenes Slideshow' , 'cuble' )
+                ),
+                'public' => true,
+                'supports' => array( 'title', 'excerpt', 'thumbnail')
+        )
+);
+
+/**
  * Soporte imágenes destacadas
  */
 if ( function_exists( 'add_theme_support' ) )
@@ -62,6 +76,7 @@ if ( function_exists( 'add_theme_support' ) )
 }
 add_image_size( 'projects-thumbnail', 252, 252, true );
 add_image_size( 'services-thumbnail', 250, 140, true );
+add_image_size( 'slideshow-thumbnail', 1170, 400, true );
 
 /**
  * Carga las hojas de estilo y los ficheros de scripts.
@@ -263,3 +278,44 @@ function cuble_mailchimpSF_signup_form()
     $string = preg_replace('/<\/from>/', '</fieldset></from>', $string);
     echo $string;
 }
+
+
+/**
+ * Personalización del tema.
+ */
+ function cuble_customize_register( $wp_customize )
+{
+   //All our sections, settings, and controls will be added here
+    $wp_customize->add_setting( 'primary_claim' , array(
+            'default'     => 'Welcome to Merovingio a chrystal clear multipurpose theme',
+    ) );
+    $wp_customize->add_setting( 'secondary_claim_title' , array(
+            'default'     => 'It brings you a beautiful look and a powerful framework for your website',
+    ) );
+    $wp_customize->add_setting( 'secondary_claim_content' , array(
+            'default'     => "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do. So throw off the bowlines. Sail away from the safe harbor. Catch the trade winds. Explore. Dream. Discover. The design will scale to fit on all browser widths/resolutions and on all mobile devices. Go ahead and scale your browser window and see the results.",
+    ) );
+    $wp_customize->add_section( 'cuble_front_content' , array(
+        'title'      => __('Contenido portada','cuble'),
+        'priority'   => 30,
+    ) );
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'primary_claim_control', array(
+            'label'        => __( 'Eslogan principal', 'cuble' ),
+            'section'    => 'cuble_front_content',
+            'settings'   => 'primary_claim',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'secondary_claim_title_control', array(
+            'label'        => __( 'Título eslogan secundario', 'cuble' ),
+            'section'    => 'cuble_front_content',
+            'settings'   => 'secondary_claim_title',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'secondary_claim_content_control', array(
+            'label'        => __( 'Contenido eslogan secundario', 'cuble' ),
+            'section'    => 'cuble_front_content',
+            'settings'   => 'secondary_claim_content',
+    ) ) );
+    
+    
+    
+}
+add_action( 'customize_register', 'cuble_customize_register' );
