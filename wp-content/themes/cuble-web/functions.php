@@ -113,7 +113,7 @@ function cuble_fix_page_menu($html)
 {
     return preg_replace('/<ul>/', '<ul class="nav">', $html);
 }
-add_filter('wp_page_menu', 'cuble_fix_menu');
+add_filter('wp_page_menu', 'cuble_fix_page_menu');
 
 
 /**
@@ -226,4 +226,22 @@ function cuble_comment( $comment, $args, $depth ) {
 	<?php
 			break;
 	endswitch;
+}
+
+/**
+ * Mailchimp
+ */
+
+add_action('cuble_mailchimpSF_signup_form', 'cuble_mailchimpSF_signup_form');
+function cuble_mailchimpSF_signup_form()
+{
+    ob_start();
+    mailchimpSF_signup_form();
+    $string=ob_get_contents();
+    ob_end_clean();
+    $string = preg_replace('/class="button"/', 'class="button btn btn-primary"', $string);
+    $string = preg_replace('/<form method="post" action="\#mc_signup" id="mc_signup_form">/', '<form method="post" action="#mc_signup" id="mc_signup_form" class="footer-form"><fieldset>', $string);
+    $string = preg_replace('/Email Address/', __('Recibe nuestro mail mensualmente', 'cuble'), $string);
+    $string = preg_replace('/<\/from>/', '</fieldset></from>', $string);
+    echo $string;
 }

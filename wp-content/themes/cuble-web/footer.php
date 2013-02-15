@@ -30,13 +30,7 @@
 				
 				<div class="span3">
 					<h4><?php _e('Suscríbete en nuestro newletter', 'cuble')?></h4>
-					<form class="footer-form">
-						<fieldset>
-							<label><?php _e('Recibe nuestro mail mensualmente', 'cuble')?></label>
-							<input type="text" placeholder="<?php _e('Pon tu correo electrónico', 'cuble')?>"> 
-							<button type="submit" class="btn btn-primary">Suscribirse</button>
-						</fieldset>
-					</form>
+					<?php do_action('cuble_mailchimpSF_signup_form'); ?>
 				</div> <!-- /.span3 -->
 			</div> <!-- /.row -->
 		</div><!-- /.container -->

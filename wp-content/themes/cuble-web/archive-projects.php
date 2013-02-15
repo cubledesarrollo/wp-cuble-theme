@@ -24,7 +24,7 @@ $loop = new WP_Query( $args );
 			<li><span><?php _e('Filtrar proyectos')?>:</span></li>
 			<li><a class="active" href="#" data-filter="*"><?php _e('Ver todas', 'cuble')?></a></li>
 			<?php foreach ($tags as $tag):?>
-			<li><a href="#" data-filter=".<?php echo $tag->name?>"><?php echo $tag->name?></a></li>
+			<li><a href="#" data-filter=".<?php echo $tag->slug?>"><?php echo $tag->name?></a></li>
             <?php endforeach; ?>
 		</ul>
         
@@ -33,7 +33,7 @@ $loop = new WP_Query( $args );
     		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     		<?php 
     		$terms = get_the_terms($post->ID, 'project_tags');
-    		$class = array(); foreach ($terms as $term) $class[] = $term->name;
+    		$class = array(); foreach ($terms as $term) $class[] = $term->slug;
     		$class = join(' ', $class);
     		 ?>
     		<li class="span3 <?php echo $class?>">
