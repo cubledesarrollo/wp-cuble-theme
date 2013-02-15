@@ -36,6 +36,23 @@ register_taxonomy(
 );
 
 /**
+ * Post para servicios, que se mostrarán en portada.
+ */
+register_post_type( 'services',
+        array(
+                'labels' => array(
+                        'name' => __( 'Servicios' , 'cuble'),
+                        'singular_name' => __( 'Servicio' , 'cuble' )
+                ),
+                'public' => true,
+                'show_ui' => true,
+                'has_archive' => true,
+                'rewrite' => array('slug' => 'services'),
+                'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields')
+        )
+);
+
+/**
  * Soporte imágenes destacadas
  */
 if ( function_exists( 'add_theme_support' ) )
@@ -44,6 +61,7 @@ if ( function_exists( 'add_theme_support' ) )
     set_post_thumbnail_size( 670, 262, true );
 }
 add_image_size( 'projects-thumbnail', 252, 252, true );
+add_image_size( 'services-thumbnail', 250, 140, true );
 
 /**
  * Carga las hojas de estilo y los ficheros de scripts.

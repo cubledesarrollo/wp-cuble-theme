@@ -36,38 +36,26 @@
 </div>
 
 <div class="row">
+    <?php
+    $args = array( 'post_type' => 'services', 'posts_per_page' => 4 );
+    $loop = new WP_Query( $args );
+    ?>
+    <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <div class="span3">
         <div class="info-column">
             <img class="img-rounded" src="<?php echo get_stylesheet_directory_uri()?>/assets/team-1.jpg" alt="">
-            <h3><i class="icon icon-beaker"></i> Custom Design</h3>
-            <p>When considering redesigning your <a href="#">company website</a>, one of the best things you can do to prepare is to research what you want. That's all you need to know.</p>
-            <a class="btn btn-primary" href="#">Learn More &raquo;</a>
+            <h3>
+                <?php $icon = get_post_meta($post->ID, 'icon', true); ?>
+                <?php if (!empty($icon)):?>
+                <i class="icon <?php echo $icon; ?>"></i>
+                <?php endif; ?>
+                <?php the_title() ?>
+            </h3>
+            <p><?php the_excerpt(); ?></p>
+            <a class="btn btn-primary" href="<?php the_permalink() ?>"><?php _e("Saber más &raquo;",'cuble')?></a>
         </div>
     </div>
-    <div class="span3">
-        <div class="info-column">
-            <img class="img-rounded" src="<?php echo get_stylesheet_directory_uri()?>/assets/team-2.jpg" alt="">
-            <h3><i class="icon icon-cloud"></i> Cloud Perfect</h3>
-            <p>Get a handle on your finances the free and fast way. Mint does all the work of organizing and categorizing your spending for you. See where every dime goes and make money.</p>
-            <a class="btn btn-primary" href="#">Learn More &raquo;</a>
-        </div>
-    </div>
-    <div class="span3">
-        <div class="info-column">
-            <img class="img-rounded" src="<?php echo get_stylesheet_directory_uri()?>/assets/team-3.jpg" alt="">
-            <h3><i class="icon icon-inbox"></i> Customizable</h3>
-            <p>Just click on what you want to accomplish with your money. Mint gives you the simple steps for getting there, along with free advice, gentle reminders, and encouragement.</p>
-            <a class="btn btn-primary" href="#">Learn More &raquo;</a>
-        </div>
-    </div>
-    <div class="span3">
-        <div class="info-column">
-            <img class="img-rounded" src="<?php echo get_stylesheet_directory_uri()?>/assets/team-4.jpg" alt="">
-            <h3><i class="icon icon-refresh"></i> Responsive</h3>
-            <p>It’s easier to stick to a budget designed for your lifestyle. Mint automatically creates one tailored just for you and keeps you on track with email and mobile alerts.</p>
-            <a class="btn btn-primary" href="#">Learn More &raquo;</a>
-        </div>
-    </div>
+    <?php endwhile; ?>
 </div><!-- /.row -->
 
 <div class="row">

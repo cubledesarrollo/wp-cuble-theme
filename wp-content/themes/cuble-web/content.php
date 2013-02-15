@@ -19,7 +19,13 @@
 	</div><!-- end of post meta data-->
 	<!-- the post -->
 	<div class="span7">
-		<h3><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+		<h3>
+        <?php $icon = get_post_meta($post->ID, 'icon', true); ?>
+        <?php if (!empty($icon)):?>
+        <i class="icon <?php echo $icon; ?>"></i>
+        <?php endif; ?>
+		<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+		</h3>
 		
 		<?php if (has_post_thumbnail()): ?>
 		<?php the_post_thumbnail( 'post-thumbnail', array("class" => "post-img")); ?>
