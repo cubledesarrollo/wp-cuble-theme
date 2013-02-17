@@ -57,7 +57,7 @@
                 <?php endif; ?>
                 <?php the_title() ?>
             </h3>
-            <p><?php the_excerpt(); ?></p>
+            <p><?php the_content(); ?></p>
             <a class="btn btn-primary" href="<?php the_permalink() ?>"><?php _e("Saber más &raquo;",'cuble')?></a>
         </div>
     </div>
