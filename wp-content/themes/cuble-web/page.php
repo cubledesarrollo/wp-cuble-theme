@@ -1,6 +1,5 @@
 <?php
 /**
- * Template Name: Blog Home
  * 
  * @author Cuble Desarrollo S.L.
  * @package Wordpress Cuble Theme

@@ -30,7 +30,7 @@
         </div><!-- /.carousel -->
     </div><!-- /.span -->
 </div><!-- /.row -->
-
+<?php if (get_theme_mod('primary_claim') != ""): ?>
 <div class="row">
     <div class="span12">
         <div class="well centered">
@@ -38,7 +38,7 @@
         </div>
     </div>
 </div>
-
+<?php endif; ?>
 <div class="row">
     <?php
     $args = array( 'post_type' => 'services', 'posts_per_page' => 4 );
@@ -63,7 +63,7 @@
     </div>
     <?php endwhile; ?>
 </div><!-- /.row -->
-
+<?php if (get_theme_mod('secondary_claim_title') != "" && get_theme_mod('secondary_claim_content') != ""): ?>
 <div class="row">
     <div class="span12">
         <div class="well centered">
@@ -72,6 +72,6 @@
         </div>
     </div>
 </div>
-
+<?php endif; ?>
 </div><!-- /.container (page container)-->
 <?php get_footer(); ?>
