@@ -1,15 +1,5 @@
 <!-- the sidebar -->
 <aside class="span3">
-
-    <!-- widget -->
-    <div class="well">
-        <strong><?php _e("Buscar", 'cuble');?></strong>
-        <hr>
-        <form class="input-append">
-            <input type="text" class="flexible">
-            <button type="submit" class="btn btn-primary"><?php _e("Ir", 'cuble');?></button>
-        </form>
-    </div>
     <!-- widget -->
     <div class="well">
         <strong><?php _e("Temas populares", 'cuble');?></strong>
@@ -17,7 +7,8 @@
         <?php wp_tag_cloud(array(
                 'orderby' => 'count', 
                 'number' => 10,
-                'format' => 'list')); ?>
+                'format' => 'list',
+                'largest' => 8)); ?>
     </div>
     <?php dynamic_sidebar( 'right-sidebar' ); ?>
     

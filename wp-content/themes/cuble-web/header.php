@@ -32,12 +32,7 @@
                         </ul>
                     </div>
                     <div class="span4">
-                        <form>
-                            <div class="input-append">
-                                <input class="span2" id="appendedInputButtons" type="text">
-                                <button class="btn btn-primary" type="button"><?php _e("Buscar", 'cuble')?></button>
-                            </div>
-                        </form>
+                        <?php get_search_form( true ); ?>
                     </div><!-- /.span -->
                 </div><!-- /.row -->
             </header>

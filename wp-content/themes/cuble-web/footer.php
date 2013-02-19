@@ -23,7 +23,8 @@
 					<h4><?php _e('Etiquetas populares', 'cuble')?></h4>
 				    <?php wp_tag_cloud(array('orderby' => 'count', 
 				            'number' => 10,
-				            'format' => 'list')); ?>
+				            'format' => 'list',
+				            'largest' => 8)); ?>
 				</div><!-- /.span3 -->
 
 				<hr class="visible-phone">

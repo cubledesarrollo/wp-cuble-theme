@@ -1,4 +1,7 @@
 <?php
+//update_option('siteurl','http://new.cuble.es');
+//update_option('home','http://new.cuble.es');
+
 /**
  * Registro de menús.
  */
@@ -319,3 +322,27 @@ function cuble_mailchimpSF_signup_form()
     
 }
 add_action( 'customize_register', 'cuble_customize_register' );
+
+/**
+ * Formulario de busqueda.
+ * <form>
+                            <div class="input-append">
+                                <input class="span2" id="appendedInputButtons" type="text">
+                                <button class="btn btn-primary" type="button"><?php _e("Buscar", 'cuble')?></button>
+                            </div>
+                        </form>
+ */
+ function cuble_search_form( $form )
+ {
+
+    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+    <div class="input-append">
+    <input class="span2" type="text" value="' . get_search_query() . '" name="s" id="s" />
+    <button type="submit" class="btn btn-primary" id="searchsubmit">'. esc_attr__('Buscar','cuble') .'</button>
+    </div>
+    </form>';
+
+    return $form;
+}
+
+add_filter( 'get_search_form', 'cuble_search_form' );
