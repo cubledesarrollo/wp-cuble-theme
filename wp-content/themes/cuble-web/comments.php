@@ -50,10 +50,11 @@ if ( post_password_required() )
 	<?php endif; // have_comments() ?>
 	
 	<!-- coment form -->
+    <?php if ( comments_open() ): ?>
 	<button type="button" class="btn" data-toggle="collapse" data-target=".comment-form"><?php _e('Escribe un comentario', 'cuble'); ?></button>
 	<div class="comment-form collapse in">
 	<?php comment_form(array('title_reply' => __('Deja que tu voz sea escuchada <hr/>', 'cuble'),
 	        'comment_field' => '<label for="user-comment">'.__('Tu comentario', 'cuble').':</label><textarea name="comment" class="span6" cols="30" rows="10"></textarea>' )); ?>
 	</div>
-
+	<?php endif; ?>
 </div><!-- #comments .comments-area -->

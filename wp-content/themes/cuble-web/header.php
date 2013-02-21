@@ -31,8 +31,12 @@
                             <li><a href="https://plus.google.com/114449356144896554020/"><i class="icon icon-google-plus-sign"></i></a></li>
                         </ul>
                     </div>
-                    <div class="span4">
-                        <?php get_search_form( true ); ?>
+                    <div class="span2 offset2">
+                        <div class="well header-contact">
+                            <i class="icon icon-envelope"></i> <a href="mailto:info@cuble.es">info@cuble.es</a>
+                            <br/>
+                            <i class="icon icon-phone-sign"></i> <a href="tel:+34963211830">+34 963211830</a>
+                        </div>
                     </div><!-- /.span -->
                 </div><!-- /.row -->
             </header>

@@ -91,8 +91,8 @@ function cuble_scripts_styles() {
      * Cargamos estilos.
      */
     wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );
-    wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri().'/css/font-awesome.css' );
-    wp_enqueue_style( 'font-awesome-ie7', get_stylesheet_directory_uri().'/css/font-awesome-ie7.css' );
+    wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri().'/css/font-awesome.min.css' );
+    wp_enqueue_style( 'font-awesome-ie7', get_stylesheet_directory_uri().'/css/font-awesome-ie7.min.css' );
     wp_enqueue_style( 'isotope', get_stylesheet_directory_uri().'/css/isotope.css' );
     
     /**

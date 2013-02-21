@@ -5,7 +5,7 @@
  * @author Cuble Desarrollo S.L.
  * @package Wordpress Cuble Theme
  */
-$args = array( 'post_type' => 'projects', 'posts_per_page' => 10 );
+$args = array( 'post_type' => 'projects', 'posts_per_page' => -1 );
 $loop = new WP_Query( $args );
 ?>
 <?php get_header(); ?>
