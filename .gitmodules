@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/TimelineJS-Wordpress-Plugin"]
+	path = wp-content/plugins/TimelineJS-Wordpress-Plugin
+	url = git://github.com/VeriteCo/TimelineJS-Wordpress-Plugin.git

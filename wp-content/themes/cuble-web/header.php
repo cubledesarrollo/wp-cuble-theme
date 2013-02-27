@@ -29,6 +29,7 @@
                             <li><a href="http://www.twitter.com/cuble_es"><i class="icon icon-twitter-sign"></i></a></li>
                             <li><a href="http://www.facebook.com/cuble.es"><i class="icon icon-facebook-sign"></i></a></li>
                             <li><a href="https://plus.google.com/114449356144896554020/"><i class="icon icon-google-plus-sign"></i></a></li>
+                            <li><a href="https://github.com/cubledesarrollo"><i class="icon icon-github"></i></a></li>
                         </ul>
                     </div>
                     <div class="span2 offset2">

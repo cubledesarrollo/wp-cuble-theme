@@ -41,10 +41,12 @@
 <?php endif; ?>
 <div class="row">
     <?php
+    global $more;
     $args = array( 'post_type' => 'services', 'posts_per_page' => 4 );
     $loop = new WP_Query( $args );
     ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    <?php $more = 0; ?>
     <div class="span3">
         <div class="info-column">
             <?php if (has_post_thumbnail()): ?>
@@ -57,8 +59,8 @@
                 <?php endif; ?>
                 <?php the_title() ?>
             </h3>
-            <p><?php the_content(); ?></p>
-            <a class="btn btn-primary" href="<?php the_permalink() ?>"><?php _e("Saber más &raquo;",'cuble')?></a>
+            <p><?php the_content(__("Saber más &raquo;",'cuble')); ?></p>
+            <!-- <a class="btn btn-primary" href="<?php the_permalink() ?>"><?php ?></a> -->
         </div>
     </div>
     <?php endwhile; ?>

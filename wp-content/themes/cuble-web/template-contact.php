@@ -110,7 +110,7 @@ if(isset($_POST['submitted']))
 <div class="row">
 	<div class="span4">
 		<h3><?php _e("Nuestra localización", 'cuble')?></h3>
-		<iframe width="370" height="270" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=Cuble+Desarrollo,+Carrer+les+Garrigues,+3,+Valencia&amp;aq=0&amp;oq=cub&amp;sll=39.470723,-0.378417&amp;sspn=0.007189,0.016512&amp;g=Carrer+les+Garrigues,+3,+46001+Valencia&amp;ie=UTF8&amp;hq=Cuble+Desarrollo,&amp;hnear=Carrer+les+Garrigues,+3,+46001+Valencia&amp;ll=39.470721,-0.378417&amp;spn=0.006295,0.006295&amp;&amp;output=embed"></iframe><br /><small><a href="https://maps.google.es/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=Cuble+Desarrollo,+Carrer+les+Garrigues,+3,+Valencia&amp;aq=0&amp;oq=cub&amp;sll=39.470723,-0.378417&amp;sspn=0.007189,0.016512&amp;g=Carrer+les+Garrigues,+3,+46001+Valencia&amp;ie=UTF8&amp;hq=Cuble+Desarrollo,&amp;hnear=Carrer+les+Garrigues,+3,+46001+Valencia&amp;ll=39.470721,-0.378417&amp;spn=0.006295,0.006295&amp;t=m" style="color:#0000FF;text-align:left">Ver mapa más grande</a></small>
+		<iframe width="370" height="270" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-0.380305,39.469781,-0.376368,39.471753&amp;layer=mapnik&amp;marker=39.47077,-0.37844" style="border: 1px solid black"></iframe><br /><small><a href="http://www.openstreetmap.org/?lat=39.470766999999995&amp;lon=-0.37833649999999996&amp;zoom=18&amp;layers=M&amp;mlat=39.47077&amp;mlon=-0.37844">Ver mapa m&#225;s grande</a></small>
 	</div>
 	<div class="span4">
 		<h3><?php _e("Información de contacto", "cuble")?></h3>
