@@ -79,6 +79,7 @@ if ( function_exists( 'add_theme_support' ) )
 }
 add_image_size( 'projects-thumbnail', 252, 252, true );
 add_image_size( 'services-thumbnail', 250, 140, true );
+add_image_size( 'services-thumbnail-big', 550, 300, true );
 add_image_size( 'slideshow-thumbnail', 1170, 400, true );
 
 /**
@@ -277,7 +278,7 @@ function cuble_mailchimpSF_signup_form()
     ob_end_clean();
     $string = preg_replace('/class="button"/', 'class="button btn btn-primary"', $string);
     $string = preg_replace('/<form method="post" action="\#mc_signup" id="mc_signup_form">/', '<form method="post" action="#mc_signup" id="mc_signup_form" class="footer-form"><fieldset>', $string);
-    $string = preg_replace('/Email Address/', __('Recibe nuestro mail mensualmente', 'cuble'), $string);
+    $string = preg_replace('/Email Address/', __('Entérate de nuestras noticias', 'cuble'), $string);
     $string = preg_replace('/<\/from>/', '</fieldset></from>', $string);
     echo $string;
 }

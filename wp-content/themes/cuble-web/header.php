@@ -36,7 +36,7 @@
                         <div class="well header-contact">
                             <i class="icon icon-envelope"></i> <a href="mailto:info@cuble.es">info@cuble.es</a>
                             <br/>
-                            <i class="icon icon-phone-sign"></i> <a href="tel:+34963211830">+34 963211830</a>
+                            <i class="icon icon-phone-sign"></i> <a href="tel:+34963211830">+34 96 321 18 30</a>
                         </div>
                     </div><!-- /.span -->
                 </div><!-- /.row -->

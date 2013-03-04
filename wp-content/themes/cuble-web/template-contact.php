@@ -109,7 +109,7 @@ if(isset($_POST['submitted']))
 
 <div class="row">
 	<div class="span4">
-		<h3><?php _e("Nuestra localización", 'cuble')?></h3>
+		<h3><?php _e("Estamos aquí", 'cuble')?></h3>
 		<iframe width="370" height="270" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-0.380305,39.469781,-0.376368,39.471753&amp;layer=mapnik&amp;marker=39.47077,-0.37844" style="border: 1px solid black"></iframe><br /><small><a href="http://www.openstreetmap.org/?lat=39.470766999999995&amp;lon=-0.37833649999999996&amp;zoom=18&amp;layers=M&amp;mlat=39.47077&amp;mlon=-0.37844">Ver mapa m&#225;s grande</a></small>
 	</div>
 	<div class="span4">
@@ -118,17 +118,18 @@ if(isset($_POST['submitted']))
 			<p><strong><?php _e("Dirección", 'cuble')?>:</strong></p>
 			<hr>
 			<p>
-				Cuble Desarrollo S.L: <br>
+				Cuble Desarrollo S.L <br>
+				CIF: B97840904 <br>
 				C/ Garrigues, 3, 3ºB <br>
 				46001, Valencia, España <br>
-				Tel.: +34 963211830
+				Tel.: <a href="tel:+34963211830">+34 96 321 18 30</a>
 			</p>
 			<hr>
-			<p><?php _e("No dude en contactar con nosotros sobre lo que quieras. Estamos abiertos a preguntas, comentarios y sugerencias", 'cuble')?></p>
+			<p><?php _e("Si tienes algún proyecto, idea o cosa rara por utópica que parezca, no dudes en contárnosla.", 'cuble')?></p>
 		</div>
 	</div>
 	<div class="span4">
-		<h3><?php _e("Envíanos un correo", "cuble")?></h3>
+		<h3><?php _e("Mándanos tu propuesta", "cuble")?></h3>
 			<form class="form" action="<?php the_permalink(); ?>" method="post">
 				<label for="name"><?php _e("Tu nombre", "cuble")?>:</label>
 				<input class="span4" type="text" id="name" name="_name" placeholder="">

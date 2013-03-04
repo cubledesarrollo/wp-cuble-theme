@@ -10,7 +10,7 @@
 
 <div class="row">
 	<div class="span12">
-		<h2>Our Curated Blog</h2>
+		<h2><?php _e("El Blog de Cuble", 'cuble') ?></h2>
 		<hr>
 	</div>
 </div>

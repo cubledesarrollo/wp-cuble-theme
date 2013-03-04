@@ -6,8 +6,7 @@
 			<div class="row">
 				<div class="span3">
 					<h4><?php _e("Nosotros", 'cuble')?></h4>
-					<p>Technology should be about more than newest, loudest, prettiest. It should make a difference.. <a href="#">Aenean</a> nisl orci, condimentum.</p>
-					<p>We take what’s familiar and look at it in a new light. Our team focuses on making technology that’s simple, fresh and helpful.</p>
+					<p><?php _e("Somos una empresa con amplia experiencia en el desarrollo de herramientas digitales de última generación. Nuestra principal baza es el contacto directo y el compromiso de ayudar a nuestros clientes a alcanzar su propósito empresarial.", "cuble"); ?></p>
 				</div> <!-- /.span3 -->
 
 				<hr class="visible-phone">
@@ -30,7 +29,7 @@
 				<hr class="visible-phone">
 				
 				<div class="span3">
-					<h4><?php _e('Suscríbete en nuestro newletter', 'cuble')?></h4>
+					<h4><?php _e('Subscribirse a nuestro newsletter', 'cuble')?></h4>
 					<?php do_action('cuble_mailchimpSF_signup_form'); ?>
 				</div> <!-- /.span3 -->
 			</div> <!-- /.row -->
