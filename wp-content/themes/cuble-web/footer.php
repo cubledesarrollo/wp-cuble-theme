@@ -38,7 +38,7 @@
 		<div class="bottom-line">
 			<div class="container">
 				<p class="pull-right"><a href="#"><?php _e("Ir arriba")?></a></p>
-				<p>&copy; <?php echo date('Y')?> Cuble Desarrollo S.L. | <a href="http://www.twitter.com/cuble_es"><i class="icon icon-twitter"></i></a> | <a href="http://www.facebook.com/cuble.es"><i class="icon icon-facebook"></i></a> | <a href="https://plus.google.com/114449356144896554020/"><i class="icon icon-google-plus"></i></a></p>
+				<p>&copy; <?php echo date('Y')?> Cuble Desarrollo S.L. | <a href="http://www.twitter.com/cuble_es"><i class="icon icon-twitter"></i></a> | <a href="http://www.facebook.com/cuble.es"><i class="icon icon-facebook"></i></a> | <a href="https://plus.google.com/114449356144896554020/"><i class="icon icon-google-plus"></i></a> | <a href="https://github.com/cubledesarrollo"><i class="icon icon-github"></i></a></p>
 			</div>
 		</div>
 	</footer>
