@@ -191,6 +191,17 @@ function cuble_next_link( $link )
 add_filter('next_post_link','cuble_next_link');
 add_filter('previous_post_link', 'cuble_prev_link');
 
+function cuble_posts_prev_link( $link )
+{
+    return 'class="btn btn-primary"';
+}
+function cuble_posts_next_link( $link )
+{
+    return 'class="btn btn-primary"';
+}
+add_filter('next_posts_link_attributes','cuble_posts_next_link');
+add_filter('previous_posts_link_attributes', 'cuble_posts_prev_link');
+
 /**
  * Tag cloud
  */

@@ -10,7 +10,7 @@
 
 <div class="row">
 	<div class="span12">
-		<h2>Our Curated Blog</h2>
+		<h2>El Blog de Cuble</h2>
 		<hr>
 	</div>
 </div>
