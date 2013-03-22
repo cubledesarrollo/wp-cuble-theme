@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="span4">
                         <h1>
-                            <a href="<?php echo site_url()?>"><img src="<?php bloginfo('template_url'); ?>/assets/logocuble.png" alt=""></a>
+                            <a href="<?php echo site_url()?>"><img src="<?php bloginfo('template_url'); ?>/assets/logocuble.png" alt="<?php _e('Aplicaciones que rentabilizan empresas','cuble');?>"></a>
                         </h1>
                     </div>
                     <div class="span4">
