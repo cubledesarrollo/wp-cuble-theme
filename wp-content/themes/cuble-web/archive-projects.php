@@ -1,7 +1,7 @@
 <?php
 /**
  * Profolio
- * 
+ *
  * @author Cuble Desarrollo S.L.
  * @package Wordpress Cuble Theme
  */
@@ -27,18 +27,18 @@ $loop = new WP_Query( $args );
 			<li><a href="#" data-filter=".<?php echo $tag->slug?>"><?php echo $tag->name?></a></li>
             <?php endforeach; ?>
 		</ul>
-        
+
         <!--Portfolio Items-->
         <ul class="thumbnails portfolio">
     		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-    		<?php 
+    		<?php
     		$terms = get_the_terms($post->ID, 'project_tags');
     		$class = array(); foreach ($terms as $term) $class[] = $term->slug;
     		$class = join(' ', $class);
     		 ?>
     		<li class="span3 <?php echo $class?>">
     			<div class="thumbnail">
-    				<a class="js-fancybox" rel="album" title="<?php the_title() ?>" href="<?php the_permalink() ?>">
+    				<a rel="album" title="<?php the_title() ?>" href="<?php the_permalink() ?>">
     				<?php the_post_thumbnail('projects-thumbnail');?>
     				</a>
     				<h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>

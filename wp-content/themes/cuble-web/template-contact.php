@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Contacto
- * 
+ *
  * @author Cuble Desarrollo S.L.
  * @package Wordpress Cuble Theme
  */
@@ -28,7 +28,7 @@ if(isset($_POST['submitted']))
         $emailError = 'Please enter your email address.';
         $hasError = true;
     }
-    else if(!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", 
+    else if(!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i",
             trim($_POST['_email'])))
     {
         $emailError = 'You entered an invalid email address.';
@@ -84,7 +84,7 @@ if(isset($_POST['submitted']))
 <?php if (isset($emailSent) && $emailSent): ?>
 <div class="row">
 	<div class="span12">
-	    <div class="alert alert-info"
+	    <div class="alert alert-info">
     	    <button type="button" class="close" data-dismiss="alert">×</button>
     	    <strong><?php _e("Mensaje enviado correctamente", 'cuble')?></strong>
 	    </div>
@@ -133,13 +133,13 @@ if(isset($_POST['submitted']))
 			<form class="form" action="<?php the_permalink(); ?>" method="post">
 				<label for="name"><?php _e("Tu nombre", "cuble")?>:</label>
 				<input class="span4" type="text" id="name" name="_name" placeholder="">
-				
+
 				<label for="inputEmail"><?php _e("Correo", "cuble")?>:</label>
 				<input class="span4" type="text" id="inputEmail" name="_email" placeholder="">
-				
+
 				<label for="message"><?php _e("Tu mensaje", "cuble")?>:</label>
 				<textarea class="span4" rows="4" id="message" name="_message" placeholder=""></textarea>
-				
+
 				<?php /*<label class="checkbox">
 					<input type="checkbox" name="copy"> <?php _e("Enviarme una copia", 'cuble') ?>
 				</label> */ ?>

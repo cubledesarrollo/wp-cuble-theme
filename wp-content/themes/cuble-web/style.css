@@ -7,9 +7,112 @@ Author: Cuble Desarrollo S.L.
 Author URI: http://www.cuble.es
 */
 
+/* =MailChimp
+-------------------------------------------------------------- */
 .mc_signup_submit {
     text-align: left !important;
 }
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
 .aligncenter {
-    margin: auto;
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* FeedBurner-form Styles*/
+.subscription_btn { /*btn  */
+    -webkit-border-radius:3px;
+    background: #ba2829;
+    text-shadow: 0 -1px 0 #661616;
+    border: 1px solid #a52324;
+    border-radius:3px;
+    color:#fff;
+    cursor:pointer;
+    font:bold 12px arial;
+    padding:5px 3px;
+    width:15%;
+    margin-bottom: 9px;
+    margin-left: 5px;
+}
+.subscription_btn:hover{/*btn  */
+    background: #ba2829;
+    text-shadow: 0 -1px 0 #661616;
+    border: 1px solid #a52324;
 }

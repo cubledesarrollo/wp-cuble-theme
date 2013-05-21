@@ -86,8 +86,8 @@ add_image_size( 'slideshow-thumbnail', 1170, 400, true );
  * Carga las hojas de estilo y los ficheros de scripts.
  */
 function cuble_scripts_styles() {
-    
-    global $wp_styles;    
+
+    global $wp_styles;
     /**
      * Cargamos estilos.
      */
@@ -95,7 +95,7 @@ function cuble_scripts_styles() {
     wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri().'/css/font-awesome.min.css' );
     wp_enqueue_style( 'font-awesome-ie7', get_stylesheet_directory_uri().'/css/font-awesome-ie7.min.css' );
     wp_enqueue_style( 'isotope', get_stylesheet_directory_uri().'/css/isotope.css' );
-    
+
     /**
      * Compobamos si se ha creado el fichero de plantilla correctamente, si no,
      * se carga el less.
@@ -114,7 +114,7 @@ function cuble_scripts_styles() {
     */
     wp_enqueue_style( 'cuble-style', get_stylesheet_uri() );
     wp_enqueue_style( 'pauta-one', "http://fonts.googleapis.com/css?family=Patua+One");
-    
+
     /* Scripts */
     wp_enqueue_script('custom-jquery', get_stylesheet_directory_uri() .'/js/jquery-1.8.2.min.js', array(), '1.8.2', true);
 
@@ -125,7 +125,7 @@ function cuble_scripts_styles() {
         wp_enqueue_script('easing', get_stylesheet_directory_uri() .'/fancybox/jquery.easing-1.3.pack.js', array('custom-jquery', 'fancybox'), '1.3', true);
         wp_enqueue_script('isotope', get_stylesheet_directory_uri() .'/js/jquery.isotope.min.js', array('custom-jquery'), '', true);
     }
-    
+
     wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri() .'/js/bootstrap.min.js', array('custom-jquery'), '2.2.2', true);
 }
 
@@ -158,7 +158,7 @@ add_filter('wp_page_menu', 'cuble_fix_page_menu');
  */
 function cuble_avatar_css($class)
 {
-    $class = preg_replace("/class='avatar/", 
+    $class = preg_replace("/class='avatar/",
             "class='img-rounded pull-left avatar", $class) ;
     return $class;
 }
@@ -169,14 +169,14 @@ add_filter('get_avatar','cuble_avatar_css');
  */
 function cuble_read_more_link( $link )
 {
-    
+
     $link = preg_replace('/class="/', 'class="btn btn-primary ', $link );
     return $link;
 }
 add_filter( 'the_content_more_link', 'cuble_read_more_link' );
 
 /**
- * 
+ *
  */
 function cuble_prev_link( $link )
 {
@@ -212,7 +212,7 @@ function cuble_tag_cloud($src)
 add_filter('wp_tag_cloud','cuble_tag_cloud');
 
 /**
- * 
+ *
  */
 add_filter( 'nav_menu_css_class', 'additional_active_item_classes', 10, 2 );
 function additional_active_item_classes($classes = array(), $menu_item = false){
@@ -228,7 +228,7 @@ function additional_active_item_classes($classes = array(), $menu_item = false){
 
 
 /**
- * Sidebar Widgets 
+ * Sidebar Widgets
  */
 register_sidebar(array(
         'name' => __( 'Barra Lateral', 'cuble' ),
@@ -245,7 +245,7 @@ register_sidebar(array(
  */
 function cuble_comment( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
-    ?><!-- single comment --><?php 
+    ?><!-- single comment --><?php
     switch ( $comment->comment_type ) :
     case 'pingback' :
     case 'trackback' :
@@ -329,9 +329,9 @@ function cuble_mailchimpSF_signup_form()
             'section'    => 'cuble_front_content',
             'settings'   => 'secondary_claim_content',
     ) ) );
-    
-    
-    
+
+
+
 }
 add_action( 'customize_register', 'cuble_customize_register' );
 
@@ -358,3 +358,17 @@ add_action( 'customize_register', 'cuble_customize_register' );
 }
 
 add_filter( 'get_search_form', 'cuble_search_form' );
+
+// Incluir post thumbnail en el rss
+function cuble_insert_thumbnail_rss($content)
+{
+    global $post;
+    if ( has_post_thumbnail( $post->ID ) )
+    {
+        $content = '' . get_the_post_thumbnail( $post->ID ) . '' . $content;
+    }
+    return $content;
+}
+
+add_filter('the_excerpt_rss', 'cuble_insert_thumbnail_rss');
+add_filter('the_content_feed', 'cuble_insert_thumbnail_rss');
